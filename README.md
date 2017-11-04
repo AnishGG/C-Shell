@@ -1,10 +1,10 @@
-#Bash Shell:
+# Bash Shell:
 
-###Usage:
-1.	make
-2.	./shell
+### Usage:
+1. make
+2. ./shell
 
-###Files:
+### Files:
 	* code.c 	            -	contains the main file
 	* command_split_read.c 	-	helps in parsing the commands
 	* execute_echo.c 	    -	Function to execute echo
@@ -18,7 +18,7 @@
 	* execute_rest.c 	    -	Function to execute commands not in the built in commands
 	* string_fun.c 	        -	helps in string operations
 
-###Commands that can be run on the shell:
+### Commands that can be run on the shell:
 	* pwd	                -	Get the present working directory
 	* cd                    -	Change directory
 	* ls with options -l and -a  -	List the contents(files/folders/symlinks, etc)
