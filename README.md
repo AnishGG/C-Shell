@@ -22,10 +22,14 @@
 	* pwd	                -	Get the present working directory
 	* cd                    -	Change directory
 	* ls with options -l and -a  -	List the contents(files/folders/symlinks, etc)
-	* echo
 	* pinfo             	-	Get the process information
 	* pinfo <pid>	        -	Get the process information of the given process id
 	* quit	                -	Exit the shell
 	* clear	                -	Clear the screen
 	* nightswatch <dirty/interrupt>	with option -n 	-	print the dirty memory/ cpu interrupts from keyboard controller every n seconds (default 2)
+    * overkill              -    Kills all background processes
+    * fg [JobNumber]          -   Brings a background process to foreground
+    * bg [JobNumber]          -   Brings a stopped background process to running background process
+    * echo, setenv, unsetenv  - Normal functioning as in bash
+    * kjob [jobNumber] [signalNumber] - Sends the given signal to a process
 	* background processes can be run with &	    -	Get processes running in the background
