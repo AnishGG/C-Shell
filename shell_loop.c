@@ -1,11 +1,15 @@
 #include"header.h"
 #include"variables.h"
+
 void shell_loop(void){
     int pipeflag = 0;
     char **commands, **args;
     int status = 1;
     do{
         printhome();
+        signal(SIGTSTP,signal_handler); 
+        signal(SIGINT,signal_handler);
+        signal(SIGQUIT,signal_handler);
         commands = command_reader();
         int i = 0;
         while(commands[i] != NULL)
@@ -14,9 +18,11 @@ void shell_loop(void){
             pipecommand = myparser(commands[i],"|");
             int j = 0;
             while (pipecommand[j] != NULL)
-            {                
+            {
                 input_redirection(pipecommand[j]);
-                output_redirection(pipecommand[j]);
+            	char * retstr = strstr(pipecommand[j],">>");
+            	if (retstr != NULL)	output_redirection(pipecommand[j],1);
+                else	output_redirection(pipecommand[j],0);
                 char **temp1;
                 char **actual_command;
                 temp1 = myparser(pipecommand[j], "<");

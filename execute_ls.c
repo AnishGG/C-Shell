@@ -3,24 +3,6 @@
 
 // This is constructed by changing directories as opendir() was not working on parent directories. Ask why?
 int execute_ls(char **args,int flag){
-	int saved_stduot = dup(1);
-	int fd[2];
-	pipe(fd);
-    if (file_in != 0)
-    {
-        dup2(file_in,0);
-        close(file_in);
-    }
-    if (file_out != 1)
-    {
-        dup2(file_out,1);
-        close(file_out);
-    }
-    if (flag)
-    {
-    	dup2(fd[1],1);
-    	close(fd[1]);
-    }
     int num, one = 0, two = 0, i = 1, k = 0;
     char **direc = malloc(1000*(sizeof(char*)));
     while(args[i]){
@@ -143,9 +125,5 @@ int execute_ls(char **args,int flag){
         if(cnt > 1)
             printf("\n");
     }
-    chdir(pwd);
-    file_in = fd[0];
-    close(fd[1]);
-    dup2(saved_stduot,1);
     return 1;
 }

@@ -1,4 +1,5 @@
 #include"header.h"
+/* Spliting a command in accordance with predefined delimiters */
 char **command_spliter(char *command){
     int pos = 0;
     char **tokens = malloc(1000 * sizeof(char*)), *one;
@@ -17,6 +18,7 @@ char **command_spliter(char *command){
     return tokens;
 }
 
+/* Spliting a command in accordance with a particular delimiter */
 char** myparser(char *command, char* delimiter)
 {
     int pos = 0;
@@ -33,11 +35,12 @@ char** myparser(char *command, char* delimiter)
         pos++;
         one = strtok(NULL, delimiter); 
     }
-    mytoken[pos]=NULL;
+    mytoken[pos]='\0';
     pos++;
     return mytoken;
 }
 
+/* This function returns commands seperated by semi-colon */
 char **command_reader(){
     int line_size = 1000, pos = 0, c;
     char *line = malloc(sizeof(char) * line_size);

@@ -1,0 +1,36 @@
+Bash Shell
+
+Usage:
+To run the shell:
+1)	make
+2)	./shell
+
+Files:
+	code.c 	-	contains the main file
+	execute_echo.c 	-	Function to execute echo
+	execute_pwd.c 	-	Function to get the current working directory
+	print_home.c 	-	helps in printing the prompt
+	shell_loop.c 	-	To continue the prompt after every command
+	execute_cd.c 	-	Function to execute cd
+	execute_rest.c 	-	Function to execute commands not in the built in commands
+	string_fun.c 	-	helps in string operations
+	command_execute.c 	- 	Executing a given command
+	execute_pinfo.c 	-	Function to execute pinfo
+	execute_nightswatch.c 	- 	Function to execute nightswatch
+	command_split_read.c 	-	helps in parsing the commands
+
+Commands that can be run on the shell:
+	pinfo	    -	Get the process information
+	pinfo <pid>	-	Get the process information of the given process id
+	quit	    -	Exit the shell
+	clear	    -	Clear the screen
+    overkill         -    Kills all background processes
+	pwd	             -	Get the present working directory
+	cd               -	Change directory
+    fg [JobNumber]          -   Brings a background process to foreground
+    bg [JobNumber]          -   Brings a stopped background process to running background process
+    echo, setenv, unsetenv  - Normal functioning as in bash
+	ls with options -l and -a  -	List the contents(files/folders/symlinks, etc)
+    kjob [jobNumber] [signalNumber] - Sends the given signal to a process
+	nightswatch <dirty/interrupt>	with option -n 	-	print the dirty memory/ cpu interrupts from keyboard controller every n seconds (default 2)
+	background processes can be run with &	-	Get processes running in the background

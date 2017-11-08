@@ -26,6 +26,6 @@
 	* pinfo             	-	Get the process information
 	* pinfo <pid>	        -	Get the process information of the given process id
 	* quit	                -	Exit the shell
-	* clear	                -	Clear the screen  
+	* clear	                -	Clear the screen
 	* nightswatch <dirty/interrupt>	with option -n 	-	print the dirty memory/ cpu interrupts from keyboard controller every n seconds (default 2)
 	* background processes can be run with &	    -	Get processes running in the background

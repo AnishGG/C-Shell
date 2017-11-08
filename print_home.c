@@ -33,4 +33,11 @@ void printhome()
         printf("%s", pwd);
         printf("]> "RESET);
     }
+    /*This piece of code needs to run every time to check which job quits*/
+    for(i = 0;i < background_jobs; i++){
+        if(kill(job[i].pid, 0) == 0)
+            job[i].flag = 1;    // means it is running
+        else
+            job[i].flag = 0;    // means it is stopped
+    }
 }
